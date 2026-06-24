@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Thierry Plomberie 34 — Plombier Villeneuve-lès-Béziers</title>
+  <meta name="description" content="Thierry Plomberie 34, votre plombier à Villeneuve-lès-Béziers. Intervention rapide, devis gratuit, disponible 7j/7. Appelez le 06 79 75 58 83."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:#F9FAFB;color:#111827;line-height:1.65}
+    :root{
+      --blue:#1D4ED8;
+      --blue-dk:#1E3A8A;
+      --blue-lt:#DBEAFE;
+    }
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #E5E7EB;padding:0 24px}
+    .nav-inner{max-width:1100px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:1.1rem;font-weight:800;color:#111827;letter-spacing:-0.02em}
+    .nav-logo span{color:var(--blue)}
+    .nav-phone{display:flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.15s ease}
+    .nav-phone:hover{background:var(--blue-dk)}
+    /* HERO */
+    .hero{min-height:100vh;padding-top:64px;display:flex;align-items:center;position:relative;overflow:hidden;
+      background-image:linear-gradient(rgba(15,23,42,0.65),rgba(15,23,42,0.72)),url('images/hero-bg.jpg');
+      background-size:cover;background-position:center}
+    .hero-inner{max-width:900px;margin:0 auto;padding:80px 24px 60px;text-align:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.2);border:1px solid rgba(29,78,216,0.45);color:#93C5FD;padding:6px 16px;border-radius:100px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px}
+    .hero-badge-dot{width:6px;height:6px;background:#60A5FA;border-radius:50%}
+    .hero h1{font-size:clamp(2rem,4.5vw,3.6rem);font-weight:900;color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px}
+    .hero h1 em{color:#60A5FA;font-style:normal}
+    .hero-sub{font-size:1rem;color:rgba(255,255,255,0.7);margin-bottom:32px;font-weight:400}
+    .hero-sub strong{color:rgba(255,255,255,0.9)}
+    .hero-cta-phone{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--blue);color:#fff;font-size:1.4rem;font-weight:800;padding:18px 40px;border-radius:10px;text-decoration:none;letter-spacing:-0.01em;margin-bottom:12px;transition:background 0.15s,transform 0.15s}
+    .hero-cta-phone:hover{background:var(--blue-dk);transform:translateY(-2px)}
+    .hero-cta-phone:active{transform:translateY(0)}
+    .hero-cta-phone svg{flex-shrink:0}
+    .hero-note{font-size:0.82rem;color:rgba(255,255,255,0.5)}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:36px}
+    .hero-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);padding:7px 16px;border-radius:100px;font-size:0.82rem;font-weight:500}
+    /* PAIN */
+    .pain{background:#fff;padding:72px 24px}
+    .section-wrap{max-width:1100px;margin:0 auto}
+    .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+    .pain-card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;padding:28px 24px}
+    .pain-icon{width:44px;height:44px;background:var(--blue-lt);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .pain-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:#111827}
+    .pain-card p{font-size:0.9rem;color:#6B7280;line-height:1.6}
+    /* SERVICES */
+    .services{background:#F3F4F6;padding:72px 24px}
+    .section-label{font-size:0.78rem;font-weight:700;color:var(--blue);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+    .section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#111827;letter-spacing:-0.025em;margin-bottom:8px}
+    .section-title span{color:var(--blue)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px}
+    .service-card{background:#fff;border-radius:10px;padding:22px 20px;border:1px solid #E5E7EB}
+    .service-card h4{font-size:0.95rem;font-weight:700;color:#111827;margin-bottom:6px}
+    .service-card p{font-size:0.82rem;color:#9CA3AF}
+    /* TRUST */
+    .trust{background:#fff;padding:72px 24px}
+    .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
+    .trust-item{text-align:center}
+    .trust-num{font-size:2.8rem;font-weight:900;color:var(--blue);letter-spacing:-0.03em;display:block}
+    .trust-item h3{font-size:1rem;font-weight:700;margin:8px 0 6px}
+    .trust-item p{font-size:0.85rem;color:#6B7280}
+    /* CTA SECTION */
+    .cta-section{background:var(--blue-dk);padding:80px 24px;text-align:center}
+    .cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px}
+    .cta-section p{color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:1rem}
+    .cta-big-phone{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--blue-dk);font-size:1.6rem;font-weight:900;padding:20px 48px;border-radius:10px;text-decoration:none;letter-spacing:-0.02em;transition:transform 0.15s,box-shadow 0.15s}
+    .cta-big-phone:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.2)}
+    .cta-big-phone:active{transform:translateY(0)}
+    /* FOOTER */
+    footer{background:#0F172A;padding:36px 24px;text-align:center}
+    .footer-inner{max-width:1100px;margin:0 auto}
+    footer p{color:rgba(255,255,255,0.4);font-size:0.8rem}
+    footer strong{color:rgba(255,255,255,0.7)}
+    /* MOBILE */
+    @media(max-width:640px){
+      .nav-phone span{display:none}
+      .hero-cta-phone{font-size:1.1rem;padding:15px 28px}
+      .cta-big-phone{font-size:1.2rem;padding:16px 28px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span>Thierry</span> Plomberie 34</div>
+    <a href="tel:0679755883" class="nav-phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>06 79 75 58 83</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Plombier local · Villeneuve-lès-Béziers</div>
+    <h1>Fuite, bouchon, urgence ?<br/>Votre plombier à <em>Villeneuve-lès-Béziers</em><br/>répond maintenant.</h1>
+    <p class="hero-sub">
+      <strong>Devis gratuit</strong> · <strong>Intervention rapide</strong> · <strong>Disponible 7j/7</strong>
+    </p>
+    <a href="tel:0679755883" class="hero-cta-phone">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      06 79 75 58 83
+    </a>
+    <p class="hero-note">Appel direct — pas de répondeur, pas d'attente</p>
+    <div class="hero-pills">
+      <span class="hero-pill">🚿 Fuite d'eau</span>
+      <span class="hero-pill">🔧 Canalisation bouchée</span>
+      <span class="hero-pill">🛁 Salle de bain</span>
+      <span class="hero-pill">🔥 Chaudière</span>
+      <span class="hero-pill">⚡ Urgence nuit & week-end</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="section-wrap">
+    <p class="section-label">On connaît votre problème</p>
+    <h2 class="section-title">Les situations qui <span>ne peuvent pas attendre</span></h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+        </div>
+        <h3>Fuite d'eau qui s'aggrave</h3>
+        <p>Chaque minute compte. Une fuite non traitée peut causer des milliers d'euros de dégâts. On intervient vite.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h3>Canalisation bouchée ou WC bloqué</h3>
+        <p>Impossible d'utiliser vos sanitaires ? On débouche vos canalisations le jour même, sans casser les murs.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Plombier injoignable en urgence</h3>
+        <p>Vous avez rappelé 3 fois ? On sait ce que c'est. Ici on décroche, on évalue, et on vous donne un créneau précis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="section-wrap">
+    <p class="section-label">Nos interventions</p>
+    <h2 class="section-title">Tout ce qu'on sait <span>faire pour vous</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>🚿 Fuites & dépannage</h4>
+        <p>Robinets, joints, chasse d'eau, tuyaux</p>
+      </div>
+      <div class="service-card">
+        <h4>🪠 Débouchage</h4>
+        <p>WC, évier, baignoire, canalisation</p>
+      </div>
+      <div class="service-card">
+        <h4>🛁 Salle de bain</h4>
+        <p>Pose, rénovation, remplacement complet</p>
+      </div>
+      <div class="service-card">
+        <h4>🔥 Chaudière & chauffage</h4>
+        <p>Installation, entretien, dépannage</p>
+      </div>
+      <div class="service-card">
+        <h4>💧 Chauffe-eau</h4>
+        <p>Remplacement et installation rapide</p>
+      </div>
+      <div class="service-card">
+        <h4>🏠 Rénovation plomberie</h4>
+        <p>Mise aux normes, redistribution réseau</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="section-wrap">
+    <p class="section-label">Pourquoi nous choisir</p>
+    <h2 class="section-title">Un artisan local, <span>pas un call center</span></h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-num">7j/7</span>
+        <h3>Disponibilité réelle</h3>
+        <p>On répond le week-end, les jours fériés, et en soirée. Parce que les urgences ne se programment pas.</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">0€</span>
+        <h3>Devis toujours gratuit</h3>
+        <p>Prix annoncé avant intervention. Zéro mauvaise surprise sur la facture, c'est notre engagement.</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">📍</span>
+        <h3>Artisan basé à Villeneuve-lès-Béziers</h3>
+        <p>On connaît le secteur, on intervient vite. Pas de prestataire sous-traité à l'autre bout de la région.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-wrap">
+    <h2>Un problème de plomberie ?<br/>Appelez maintenant.</h2>
+    <p>On décroche. On évalue. On intervient.</p>
+    <a href="tel:0679755883" class="cta-big-phone">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      06 79 75 58 83
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p><strong>Thierry Plomberie 34</strong> — Plombier à Villeneuve-lès-Béziers (34420)</p>
+    <p style="margin-top:6px">3 impasse Gloriettes, 34420 Villeneuve-lès-Béziers · 06 79 75 58 83</p>
+    <p style="margin-top:12px">© 2026 Thierry Plomberie 34 · Tous droits réservés</p>
+  </div>
+</footer>
+
+</body>
+</html>
